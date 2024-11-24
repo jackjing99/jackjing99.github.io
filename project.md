@@ -1,6 +1,6 @@
 ## My Project
 
-I applied machine learning techniques to investigate... Below is my report.
+To determine which TAO array variables most significantly impact climate variations, particularly related to ENSO. By understanding the influence of each variable, researchers can focus data collection efforts on the most impactful metrics, improving resource allocation for climate monitoring and prediction.
 
 ***
 
@@ -12,9 +12,13 @@ There is some dataset that we can use to help solve this problem. This allows a 
 
 We did this to solve the problem. We concluded that...
 
-## Data
+## Data Preparation and Cleaning
 
-Here is an overview of the dataset, how it was obtained and the preprocessing steps taken, with some plots!
+● Data Collection: Gather data from the TAO array, which includes variables like air temperature, relative humidity, surface winds, and sea surface temperatures. Ensure you collect complete data over various ENSO cycles, if possible.
+
+● Data Cleaning: Handle missing values (represented as periods in the dataset) by either imputing them using statistical methods (e.g., mean or median imputation) or discarding rows with too many missing values. Standardize each variable, given that they have different units and scales.
+
+● Feature Engineering: Create additional features based on temporal dependencies, such as lagged variables (e.g., sea surface temperature from the previous day or week), which might capture the autocorrelation present in climate data. Additionally, I might try some of the cross-correlation analysis
 
 ![](assets/IMG/datapenguin.png){: width="500" }
 
