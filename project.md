@@ -26,17 +26,44 @@ By applying machine learning techniques, feature engineering (e.g., lagged varia
 
 ## Modelling
 
-Here are some more details about the machine learning approach, and why this was deemed appropriate for the dataset. 
+● Feature Importance with Tree-Based Models: Start by training a Random Forest or Gradient Boosting model to predict climate anomalies (e.g., ENSO events). These models have built-in mechanisms to evaluate feature importance, which will help rank variables based on their influence.
 
-The model might involve optimizing some quantity. You can include snippets of code if it is helpful to explain things.
+● Explainability Techniques with SHAP: SHAP (SHapley Additive exPlanations) values can provide a detailed view of each feature’s contribution to predictions, allowing us to identify which features have the highest impact on predicted climate variations.
 
 ```python
-from sklearn.ensemble import ExtraTreesClassifier
-from sklearn.datasets import make_classification
-X, y = make_classification(n_features=4, random_state=0)
-clf = ExtraTreesClassifier(n_estimators=100, random_state=0)
-clf.fit(X, y)
-clf.predict([[0, 0, 0, 0]])
+#### This is an example from my project to showchase the primary structure of my tree-based model to investigate the feature importance
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import mean_squared_error
+import shap
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize and train the Random Forest model
+model = RandomForestRegressor(n_estimators= 50, max_depth=5, random_state=42)
+model.fit(X_train, y_train)
+
+# Predict and evaluate the model
+y_pred = model.predict(X_test)
+mse = mean_squared_error(y_test, y_pred)
+print(f"Mean Squared Error: {mse}")
+rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+print(f"Root Mean Squared Error: {rmse}")
+
+# Feature Importance Analysis with SHAP
+explainer = shap.TreeExplainer(model)
+shap_values = explainer.shap_values(X_test)
+
+# Plot feature importance
+shap.summary_plot(shap_values, X_test, plot_type="bar")
+shap.summary_plot(shap_values, X_test)
+
 ```
 
 This is how the method was developed.
