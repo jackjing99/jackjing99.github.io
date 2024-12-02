@@ -26,6 +26,51 @@ By applying machine learning techniques, feature engineering (e.g., lagged varia
 **Explanation:**  
 The graph above depicts the cross-correlation analysis between sea surface temperature (SST) and various meteorological variables, such as air temperature,collected from the TAO array. This analysis highlights the temporal dependencies and lagged relationships between variables during different phases of ENSO cycles. Observing such patterns can help in understanding the dynamics of seasonal and inter-annual climate variations.
 
+#### Scatter Plot Between SST and Air Temperature
+![](assets/Scatter_Plot.png)
+
+**Explanation:** 
+The scatter plot highlights a strong positive correlation between air temperature and sea surface temperature (SST), indicating their close relationship in regulating ocean-atmosphere interactions. Most data points fall within a typical temperature range, with some variability attributed to local weather events, heat exchange dynamics, or short-term anomalies like storms or upwelling. This relationship is critical for understanding and predicting ENSO events, as deviations from the trend often signify significant climatic shifts such as El Niño or La Niña.
+
+#### Correlation Matrix Graph
+![](assets/correlation_matrix.png)
+
+**Explanation:** 
+The correlation heatmap provides a clear visualization of the relationships between various climate variables measured in the dataset. Key observations include:
+
+  1.Strong Positive Correlation Between Air Temperature and Sea Surface Temperature (SST): With a correlation coefficient of 0.94, these two variables are highly interrelated, reflecting their joint dependence on ocean-atmosphere interactions.
+
+  2.Longitude's Moderate Correlation with SST (0.38): This suggests that SST varies geographically across different longitudes, likely due to regional climatic and oceanographic conditions.
+
+  3.Negative Correlations with Meridional Winds (Mer_Winds): Both SST (-0.31) and air temperature (-0.36) are negatively correlated with meridional winds, indicating that stronger winds might lead to surface cooling, likely via upwelling or enhanced heat exchange.
+
+#### Time-Series Graph
+![](assets/Time_series.png)
+
+**Explanation:** 
+Both variables show strong seasonal and interannual variability, with SST (blue) and air temperature (orange) generally following a similar pattern. Air temperature consistently exhibits slightly higher values than SST. 
+Significant peaks and troughs are observed, particularly during the 1982-1983 and 1997-1998 El Niño events, where SST and air temperature increase notably. Conversely, cooler periods likely correspond to La Niña phases.
+
+**Downside: Presence of Noise &Difficulty in Identifying Long-Term Trends:**
+High Variability in Air Temperature: The air temperature line shows frequent, abrupt fluctuations that may not correspond to meaningful climate phenomena.
+
+The graph shows both short-term fluctuations (noise) and long-term patterns (e.g., El Niño/La Niña events). However, the noise obscures long-term trends, making it harder to interpret broader climate dynamics.
+
+#### Smoothed Time-Series Graph
+![](assets/Smoothed_Time-Series.png)
+
+**Explanation:** 
+This zoomed-in time-series graph highlights the variations in Sea Surface Temperature (SST) and Air Temperature from 1982 to 1984, a period that corresponds to the strong 1982-1983 El Niño event followed by a transition to cooler conditions. Key observations:
+
+1. Rising Temperatures During El Niño (1982-1983): Both SST (blue) and air temperature (orange) rise significantly during this period, peaking around mid-1983. This is consistent with the warming effect of El Niño, where warmer waters in the equatorial Pacific disrupt typical climate patterns.
+
+2. Abrupt Drop After El Niño: Following the 1983 peak, both SST and air temperature drop sharply, reflecting the end of the El Niño event and possibly the onset of a cooler La Niña phase or other oceanic cooling processes like upwelling.
+
+#### Conclusion and Transistion
+The analysis of the time-series data reveals significant relationships between sea surface temperature (SST) and air temperature, particularly during periods of strong El Niño and La Niña events. While the SST shows smoother trends due to the ocean's thermal inertia, air temperature exhibits higher variability, highlighting the need for noise reduction and feature engineering. The strong positive correlation between these variables underscores their relevance in understanding ocean-atmosphere interactions, making them valuable predictors for climate modeling.
+
+To build on these insights, machine learning techniques will be employed to predict SST using various climatic variables. By leveraging models like Random Forest and SHAP analysis for feature importance, this next phase aims to uncover key predictors, improve prediction accuracy, and gain deeper insights into the dynamics influencing SST variations.
+
 ## Modelling
 
 ● Feature Importance with Tree-Based Models: Start by training a Random Forest or Gradient Boosting model to predict climate anomalies (e.g., ENSO events). These models have built-in mechanisms to evaluate feature importance, which will help rank variables based on their influence.
