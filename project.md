@@ -20,9 +20,11 @@ By applying machine learning techniques, feature engineering (e.g., lagged varia
 
 ● Feature Engineering: Create additional features based on temporal dependencies, such as lagged variables (e.g., sea surface temperature from the previous day or week), which might capture the autocorrelation present in climate data. Additionally, I might try some of the cross-correlation analysis
 
-![](assets/IMG/AOS Final Project Graph/Cross-correlation & Data Overview.png){: width="500" }
+### Data Overview and Cross-Correlation Between SST and Air Temperature
+![](assets/Data_Overview.png)
 
-*Figure 1: Here is a caption for my diagram. This one shows a pengiun [1].*
+**Explanation:**  
+The graph above depicts the cross-correlation analysis between sea surface temperature (SST) and various meteorological variables, such as air temperature,collected from the TAO array. This analysis highlights the temporal dependencies and lagged relationships between variables during different phases of ENSO cycles. Observing such patterns can help in understanding the dynamics of seasonal and inter-annual climate variations.
 
 ## Modelling
 
