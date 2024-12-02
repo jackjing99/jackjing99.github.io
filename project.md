@@ -2,7 +2,6 @@
 
 To determine which TAO array variables most significantly impact climate variations, particularly related to ENSO. By understanding the influence of each variable, researchers can focus data collection efforts on the most impactful metrics, improving resource allocation for climate monitoring and prediction.
 
-***
 
 ## Introduction 
 
@@ -116,12 +115,28 @@ shap.summary_plot(shap_values, X_test)
 This is how the method was developed.
 
 ## Results
+![](assets/First_Model.png)
+![](assets/First_Plot_Residuls.png)
 
-Figure X shows... [description of Figure X].
+***figure X & Y***
+
+The first random forest model  highlights the relationship between predictors and sea surface temperature (SST). The SHAP feature importance plot (Figure X) demonstrates that air temperature is the dominant predictor, contributing significantly more to the model output than any other variable, followed by longitude and zonal winds. Variables like humidity and meridional winds show minimal influence.
+
+The residuals plot (Figure Y) shows the difference between predicted and actual SST values, with residuals scattered around zero, indicating that the model captures the general trends but has variability at certain ranges of predicted SST. Some clustering of residuals suggests minor systematic errors or limitations in capturing the full variability of the data..
 
 ## Discussion
+![](assets/Performance_metrics.png)
+Since I gradually changed the number of depth and n_estimators, the model performance has improved overtime withtThe third model achieves the best performance, slightly improving upon the second model in both MSE and RMSE. 
 
-From Figure X, one can see that... [interpretation of Figure X].
+#### SHAP Feature Importance 
+1. Across all models, air temperature is the most significant predictor of SST, as shown by consistently high SHAP values. Its contribution far outweighs other variables, reinforcing its dominant role in determining SST.
+2. Longitude and zonal winds are consistently the second and third most important predictors across the models. The differences in their contributions are subtle but more pronounced in the second and third models.
+3. Less significant features, such as latitude, humidity, and meridional winds, show minor impact in all models, highlighting the consistent focus of the models on the key predictors.
+
+#### Residuals Analysis
+First Model: The residuals show greater variability and noticeable clustering, particularly at higher SST values (~28-30). This suggests the model struggles to capture patterns in certain ranges of SST.
+Second Model: The residuals are more evenly distributed around the zero line, with reduced spread, indicating improved predictions and fewer systematic errors.
+Third Model: The residuals plot is similar to the second model, with slightly better uniformity and reduced clustering. The minimal differences between the second and third models suggest diminishing returns in improvements.
 
 ## Conclusion
 
