@@ -20,7 +20,7 @@ By applying machine learning techniques, feature engineering (e.g., lagged varia
 
 ● Feature Engineering: Create additional features based on temporal dependencies, such as lagged variables (e.g., sea surface temperature from the previous day or week), which might capture the autocorrelation present in climate data. Additionally, I might try some of the cross-correlation analysis
 
-![](assets/IMG/datapenguin.png){: width="500" }
+![](assets/IMG/AOS Final Project Graph/Cross-correlation & Data Overview.png){: width="500" }
 
 *Figure 1: Here is a caption for my diagram. This one shows a pengiun [1].*
 
