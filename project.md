@@ -140,14 +140,11 @@ Third Model: The residuals plot is similar to the second model, with slightly be
 
 ## Conclusion
 
-Here is a brief summary. From this work, the following conclusions can be made:
-* first conclusion
-* second conclusion
+The analysis demonstrates the significant relationship between sea surface temperature (SST) and air temperature, with air temperature consistently identified as the dominant predictor across all three machine learning models. The second and third models, leveraging advanced algorithms, achieved significantly better accuracy than the first, effectively capturing SST variability. Longitude and zonal winds were identified as secondary but important predictors, reflecting the spatial and dynamic factors influencing SST.
 
-Here is how this work could be developed further in a future project.
+These findings align closely with the dynamics of El Niño events, where elevated SSTs in the equatorial Pacific disrupt atmospheric and oceanic systems. The models' ability to highlight air temperature and other features as key predictors reinforces their relevance to understanding and predicting El Niño-related changes. For example, the warming of SST during the 1982-1983 El Niño event and its strong correlation with air temperature were captured effectively by the models, supporting the use of such predictive tools for future ENSO studies. This analysis highlights the potential of machine learning to contribute to early warning systems and improved forecasting of El Niño impacts.
+
 
 ## References
-[1] DALL-E 3
 
-[back](./)
 
