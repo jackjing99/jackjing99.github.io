@@ -138,6 +138,15 @@ First Model: The residuals show greater variability and noticeable clustering, p
 Second Model: The residuals are more evenly distributed around the zero line, with reduced spread, indicating improved predictions and fewer systematic errors.
 Third Model: The residuals plot is similar to the second model, with slightly better uniformity and reduced clustering. The minimal differences between the second and third models suggest diminishing returns in improvements.
 
+## Comparison of the XGBoost Model with Former Models
+
+The XGBoost model outperformed the former models in terms of both accuracy and feature interpretability. It achieved a significantly lower Mean Squared Error (MSE: 0.133) and a higher 
+R^2 score (0.969), demonstrating better predictive power compared to the Gradient Boosting model, Random Forest, and Linear Regression models. This improvement highlights XGBoost's ability to handle complex interactions among features and minimize errors through its gradient-boosting optimization.
+
+In terms of feature importance, SHAP analysis for the XGBoost model reaffirmed air temperature as the most influential feature, followed by longitude and zonal winds, aligning with the results from previous models but with higher clarity. The SHAP values further illustrated how each feature impacts the predictions, providing deeper insights into the relationships between predictors and sea surface temperature.
+
+Overall, the XGBoost model proves to be the most robust and interpretable model in this analysis, effectively capturing patterns in the data while minimizing noise and overfitting.
+
 ## Conclusion
 
 The analysis demonstrates the significant relationship between sea surface temperature (SST) and air temperature, with air temperature consistently identified as the dominant predictor across all three machine learning models. The second and third models, leveraging advanced algorithms, achieved significantly better accuracy than the first, effectively capturing SST variability. Longitude and zonal winds were identified as secondary but important predictors, reflecting the spatial and dynamic factors influencing SST.
